@@ -511,11 +511,12 @@ resource "aws_ecs_service" "main" {
     }
   }
 
-  network_configuration {
-    subnets          = var.ecs_subnet_ids
-    security_groups  = local.ecs_service_agg_security_groups
-    assign_public_ip = var.assign_public_ip
-  }
+// This should be enabled if awsvpc support is needed
+//  network_configuration {
+//    subnets          = var.ecs_subnet_ids
+//    security_groups  = local.ecs_service_agg_security_groups
+//    assign_public_ip = var.assign_public_ip
+//  }
 
   dynamic load_balancer {
     for_each = var.lb_target_groups

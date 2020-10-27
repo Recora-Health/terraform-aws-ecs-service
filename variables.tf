@@ -160,7 +160,7 @@ variable "associate_nlb" {
 
 variable "task_network_mode" {
   description = "The network mode to use for the default task definition."
-  default     = "awsvpc"
+  default     = "bridge"
   type        = string
 }
 
