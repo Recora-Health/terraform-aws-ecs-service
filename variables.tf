@@ -158,6 +158,12 @@ variable "associate_nlb" {
   type        = bool
 }
 
+variable "task_network_mode" {
+  description = "The network mode to use for the default task definition."
+  default     = "awsvpc"
+  type        = string
+}
+
 variable "alb_security_group" {
   description = "Application Load Balancer (ALB) security group ID to allow traffic from."
   default     = ""

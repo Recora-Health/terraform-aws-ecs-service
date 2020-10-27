@@ -419,7 +419,7 @@ data "aws_region" "current" {
 # tested. We expect deployments will manage the future container definitions.
 resource "aws_ecs_task_definition" "main" {
   family        = "${var.name}-${var.environment}"
-  network_mode  = "awsvpc"
+  network_mode  = var.task_network_mode
   task_role_arn = aws_iam_role.task_role.arn
 
   # Fargate requirements
